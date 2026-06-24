@@ -73,7 +73,154 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 317 × 7
+   artist         track                   date.entered   wk1   wk2   wk3   wk4
+   &lt;chr&gt;          &lt;chr&gt;                   &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 2 Pac          Baby Don't Cry (Keep... 2000-02-26      87    82    72    77
+ 2 2Ge+her        The Hardest Part Of ... 2000-09-02      91    87    92    NA
+ 3 3 Doors Down   Kryptonite              2000-04-08      81    70    68    67
+ 4 3 Doors Down   Loser                   2000-10-21      76    76    72    69
+ 5 504 Boyz       Wobble Wobble           2000-04-15      57    34    25    17
+ 6 98^0           Give Me Just One Nig... 2000-08-19      51    39    34    26
+ 7 A*Teens        Dancing Queen           2000-07-08      97    97    96    95
+ 8 Aaliyah        I Don't Wanna           2000-01-29      84    62    51    41
+ 9 Aaliyah        Try Again               2000-03-18      59    53    38    28
+10 Adams, Yolanda Open My Heart           2000-08-26      76    76    74    69
+# ℹ 307 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  min_date   max_date  
+  &lt;date&gt;     &lt;date&gt;    
+1 1999-06-05 2000-12-30</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  week  present missing
+  &lt;chr&gt;   &lt;int&gt;   &lt;int&gt;
+1 wk1       317       0
+2 wk4       300      17
+3 wk10      244      73
+4 wk20      146     171
+5 wk40        7     310
+6 wk76        0     317</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  `Re-entered Chart` `Number of Songs`
+  &lt;lgl&gt;                          &lt;int&gt;
+1 FALSE                            302
+2 TRUE                              15</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Rank Changes from Week 1 to Week 6:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  Category        Count
+  &lt;chr&gt;           &lt;int&gt;
+1 Got worse          27
+2 Improved          251
+3 Missing by wk6     37
+4 Stayed the same     2</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Rank Change Statistics:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  `Median Rank Change` `Mean Rank Change` `Songs with both weeks`
+                 &lt;dbl&gt;              &lt;dbl&gt;                   &lt;int&gt;
+1                  -27              -26.3                     280</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 18737 rows containing missing values or values outside the scale range
+(`geom_line()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 7
+   artist      track first_rank best_rank weeks_to_best total_weeks artist_track
+   &lt;chr&gt;       &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;int&gt;       &lt;int&gt; &lt;chr&gt;       
+ 1 2 Pac       Baby…         87        72             3           7 2 Pac - Bab…
+ 2 2Ge+her     The …         91        87             2           3 2Ge+her - T…
+ 3 3 Doors Do… Kryp…         81         3            32          53 3 Doors Dow…
+ 4 3 Doors Do… Loser         76        55             7          20 3 Doors Dow…
+ 5 504 Boyz    Wobb…         57        17             4          18 504 Boyz - …
+ 6 98^0        Give…         51         2             7          20 98^0 - Give…
+ 7 A*Teens     Danc…         97        95             4           5 A*Teens - D…
+ 8 Aaliyah     I Do…         84        35             6          20 Aaliyah - I…
+ 9 Aaliyah     Try …         59         1            14          32 Aaliyah - T…
+10 Adams, Yol… Open…         76        57             9          20 Adams, Yola…</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Notable Top-10 Songs:</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 7
+  category           artist track first_rank best_rank weeks_to_best total_weeks
+  &lt;chr&gt;              &lt;chr&gt;  &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;int&gt;       &lt;int&gt;
+1 Fastest to #1      Madon… Music         41         1             6          24
+2 Slowest to #1      Lones… Amaz…         81         1            40          55
+3 Longest Top-10 Run Creed  High…         81         7            46          57</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2480 rows containing missing values or values outside the scale range
+(`geom_line()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 </main>
 <!-- /main column -->
