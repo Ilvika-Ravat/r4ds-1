@@ -221,6 +221,138 @@ Notable Top-10 Songs:</code></pre>
 </div>
 </div>
 </div>
+<section id="artist-metric-definitions" class="level2">
+<h2 class="anchored" data-anchor-id="artist-metric-definitions">Artist metric definitions</h2>
+<p><code>artist.familiarity</code> is a 0..1 measure of how familiar the artist is to listeners. <code>artist.hotttnesss</code> is a 0..1 measure of the artist’s popularity at the time the dataset was downloaded (December 2010).</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10,000 × 35
+   artist.familiarity artist.hotttnesss artist.id          artist.latitude
+                &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;                        &lt;dbl&gt;
+ 1              0.582             0.402 ARD7TVE1187B99BFB1             0  
+ 2              0.631             0.417 ARMJAGH1187FB546F3            35.1
+ 3              0.487             0.343 ARKRRTF1187B9984DA             0  
+ 4              0.630             0.454 AR7G5I41187FB4CE6C             0  
+ 5              0.651             0.402 ARXR32B1187FB57099             0  
+ 6              0.535             0.385 ARKFYS91187B98E58F             0  
+ 7              0.556             0.262 ARD0S291187B9B7BF5             0  
+ 8              0.801             0.606 AR10USD1187B99F3F1             0  
+ 9              0.427             0.332 AR8ZCNI1187B9A069B             0  
+10              0.551             0.423 ARNTLGG11E2835DDB9             0  
+# ℹ 9,990 more rows
+# ℹ 31 more variables: artist.location &lt;dbl&gt;, artist.longitude &lt;dbl&gt;,
+#   artist.name &lt;chr&gt;, artist.similar &lt;dbl&gt;, artist.terms &lt;chr&gt;,
+#   artist.terms_freq &lt;dbl&gt;, release.id &lt;dbl&gt;, release.name &lt;dbl&gt;,
+#   song.artist_mbtags &lt;dbl&gt;, song.artist_mbtags_count &lt;dbl&gt;,
+#   song.bars_confidence &lt;dbl&gt;, song.bars_start &lt;dbl&gt;,
+#   song.beats_confidence &lt;dbl&gt;, song.beats_start &lt;dbl&gt;, song.duration &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 10,000
+Columns: 10
+$ artist.familiarity &lt;dbl&gt; 0.58179377, 0.63063004, 0.48735679, 0.63038233, 0.6…
+$ artist.hotttnesss  &lt;dbl&gt; 0.4019975, 0.4174996, 0.3434284, 0.4542312, 0.40172…
+$ artist.id          &lt;chr&gt; "ARD7TVE1187B99BFB1", "ARMJAGH1187FB546F3", "ARKRRT…
+$ artist.latitude    &lt;dbl&gt; 0.00000, 35.14968, 0.00000, 0.00000, 0.00000, 0.000…
+$ artist.location    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+$ artist.longitude   &lt;dbl&gt; 0.00000, -90.04892, 0.00000, 0.00000, 0.00000, 0.00…
+$ artist.name        &lt;chr&gt; "Casual", "The Box Tops", "Sonora Santanera", "Adam…
+$ artist.similar     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+$ artist.terms       &lt;chr&gt; "hip hop", "blue-eyed soul", "salsa", "pop rock", "…
+$ artist.terms_freq  &lt;dbl&gt; 1.0000000, 1.0000000, 1.0000000, 0.9885839, 0.88728…</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 10
+  artist.familiarity artist.hotttnesss artist.id artist.latitude artist.location
+               &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt;           &lt;dbl&gt;
+1              0.582             0.402 ARD7TVE1…             0                 0
+2              0.631             0.417 ARMJAGH1…            35.1               0
+3              0.487             0.343 ARKRRTF1…             0                 0
+4              0.630             0.454 AR7G5I41…             0                 0
+5              0.651             0.402 ARXR32B1…             0                 0
+# ℹ 5 more variables: artist.longitude &lt;dbl&gt;, artist.name &lt;chr&gt;,
+#   artist.similar &lt;dbl&gt;, artist.terms &lt;chr&gt;, artist.terms_freq &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 20
+  min_artist_familiarity q1_artist_familiarity median_artist_familiarity
+                   &lt;dbl&gt;                 &lt;dbl&gt;                     &lt;dbl&gt;
+1                      0                 0.468                     0.564
+# ℹ 17 more variables: q3_artist_familiarity &lt;dbl&gt;,
+#   max_artist_familiarity &lt;dbl&gt;, min_artist_hotttnesss &lt;dbl&gt;,
+#   q1_artist_hotttnesss &lt;dbl&gt;, median_artist_hotttnesss &lt;dbl&gt;,
+#   q3_artist_hotttnesss &lt;dbl&gt;, max_artist_hotttnesss &lt;dbl&gt;,
+#   min_song_year &lt;dbl&gt;, q1_song_year &lt;dbl&gt;, median_song_year &lt;dbl&gt;,
+#   q3_song_year &lt;dbl&gt;, max_song_year &lt;dbl&gt;, min_song_tempo &lt;dbl&gt;,
+#   q1_song_tempo &lt;dbl&gt;, median_song_tempo &lt;dbl&gt;, q3_song_tempo &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 9
+   artist.name     artist.location artist.latitude artist.longitude artist.terms
+   &lt;chr&gt;                     &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;       
+ 1 Casual                        0             0                0   hip hop     
+ 2 The Box Tops                  0            35.1            -90.0 blue-eyed s…
+ 3 Sonora Santane…               0             0                0   salsa       
+ 4 Adam Ant                      0             0                0   pop rock    
+ 5 Gob                           0             0                0   pop punk    
+ 6 Jeff And Sheri…               0             0                0   southern go…
+ 7 Rated R                       0             0                0   breakbeat   
+ 8 Tweeterfriendl…               0             0                0   post-hardco…
+ 9 Planet P Proje…               0             0                0   new wave    
+10 Clp                           0             0                0   breakcore   
+# ℹ 4 more variables: artist.familiarity &lt;dbl&gt;, artist.hotttnesss &lt;dbl&gt;,
+#   song.title &lt;dbl&gt;, song.year &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Artists with usable coordinates are limited in this dataset, because many entries use placeholder coordinates where both latitude and longitude are 0.</p>
+<p>The map below plots only artists with non-zero latitude and longitude and nonzero song year, with point color showing the year of the song.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  status                      n
+  &lt;chr&gt;                   &lt;int&gt;
+1 Placeholder coordinates  2836
+2 Usable coordinates       1616</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  column             placeholder_count
+  &lt;chr&gt;                          &lt;int&gt;
+1 artist.location                 9999
+2 release.name                    9989
+3 song.title                      9992
+4 song.year                       5320
+5 artist.familiarity                24
+6 artist.hotttnesss                496</code></pre>
+</div>
+</div>
+</section>
 
 </main>
 <!-- /main column -->
